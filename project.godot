@@ -21,14 +21,15 @@ _global_script_class_icons={
 [application]
 
 config/name="Weather"
-run/main_scene="res://init.tscn"
+run/main_scene="res://scenes/init.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Weather"
 config/icon="res://icon.png"
 
 [autoload]
 
-WeatherData="*res://scripts/weather_data.gd"
+WeatherData="*res://scripts/singletons/weather_data.gd"
+ResourceQueue="*res://scripts/singletons/resource_queue.gd"
 
 [display]
 
