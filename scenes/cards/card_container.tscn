@@ -17,6 +17,7 @@ margin_left = 670.151
 margin_top = 545.559
 margin_right = 670.151
 margin_bottom = 545.559
+rect_rotation = 45.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
