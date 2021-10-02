@@ -1,7 +1,7 @@
 class_name Card
 extends Control
 
-var type = WeatherData.TYPES.INVALID
+var type = WeatherData.TYPES.RAIN # change to invalid after debug
 
 signal selected(what)
 signal deselected(what)
@@ -29,7 +29,7 @@ func _on_Card_gui_input(event):
 				else:
 					# some effect and then return
 					for city in cities:
-						city.received_forecast = type
+						city.forecast = type
 						
 					yield(get_tree().create_timer(.25), "timeout")
 					go_to_origin = true

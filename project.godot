@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Weather"
-run/main_scene="res://scenes/init.tscn"
+run/main_scene="res://scenes/maps/map0.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Weather"
 config/icon="res://icon.png"
