@@ -26,6 +26,8 @@ func _process(delta):
 		
 func handle_selection(_current_selection):
 	if _current_selection ==  0:
+		$AnimationPlayer.play("Fade_in")
+		yield(get_tree().create_timer(2), "timeout")
 		get_parent().add_child(first_scene.instance())
 		queue_free()
 	elif _current_selection ==  1:

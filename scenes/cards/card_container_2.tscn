@@ -12,26 +12,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CardPoint4" type="Control" parent="CardPoints"]
-margin_left = 426.768
-margin_top = 533.301
-margin_right = 426.768
-margin_bottom = 533.301
-rect_rotation = -16.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint4"]
-visible = false
-margin_right = 100.0
-margin_bottom = 160.0
-mouse_filter = 2
-color = Color( 0.0666667, 0.682353, 0.0627451, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CardPoint0" type="Control" parent="CardPoints"]
 margin_left = 478.486
 margin_top = 518.137
@@ -84,10 +64,10 @@ __meta__ = {
 
 [node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint2"]
 visible = false
-margin_left = 0.996216
-margin_top = -0.0871582
-margin_right = 100.996
-margin_bottom = 159.913
+margin_left = 0.338501
+margin_top = -1.15765
+margin_right = 100.338
+margin_bottom = 158.842
 mouse_filter = 2
 color = Color( 0.443137, 0.443137, 0.443137, 1 )
 __meta__ = {
@@ -110,26 +90,6 @@ margin_right = 100.0
 margin_bottom = 160.0
 mouse_filter = 2
 color = Color( 0.92549, 0.45098, 0.0705882, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CardPoint5" type="Control" parent="CardPoints"]
-margin_left = 733.379
-margin_top = 519.222
-margin_right = 733.379
-margin_bottom = 519.222
-rect_rotation = 18.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint5"]
-visible = false
-margin_right = 100.0
-margin_bottom = 160.0
-mouse_filter = 2
-color = Color( 0.92549, 0.0705882, 0.0705882, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
