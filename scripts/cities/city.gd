@@ -1,9 +1,6 @@
 extends Node2D
 
-var received_forecast = WeatherData.INVALID setget lol
-
-func lol(what):
-	print(what)
+var received_forecast = WeatherData.TYPES.INVALID
 
 
 func weather_effect(what):
