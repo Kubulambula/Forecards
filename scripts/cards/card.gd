@@ -35,7 +35,7 @@ func _on_Card_gui_input(event):
 
 func _process(_delta):
 	if selected:
-		rect_rotation = lerp(rect_rotation, zero_rotation, 0.35)
+		rect_rotation = lerp(rect_rotation, zero_rotation, 0.01)
 		rect_global_position = get_global_mouse_position() - offset
 #		rect_rotation = zero_rotation
 	elif go_to_origin:
