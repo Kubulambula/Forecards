@@ -13,11 +13,11 @@ __meta__ = {
 }
 
 [node name="CardPoint0" type="Control" parent="CardPoints"]
-margin_left = 385.0
-margin_top = 560.0
-margin_right = 385.0
-margin_bottom = 560.0
-rect_rotation = -10.0
+margin_left = 478.486
+margin_top = 518.137
+margin_right = 478.486
+margin_bottom = 518.137
+rect_rotation = -12.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -26,55 +26,59 @@ __meta__ = {
 margin_right = 100.0
 margin_bottom = 160.0
 mouse_filter = 2
-color = Color( 0.407843, 0.0352941, 0.0352941, 1 )
+color = Color( 0.0352941, 0.121569, 0.407843, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CardPoint1" type="Control" parent="CardPoints"]
-margin_left = 510.0
-margin_top = 511.0
-margin_right = 510.0
-margin_bottom = 511.0
+margin_left = 546.803
+margin_top = 503.636
+margin_right = 546.803
+margin_bottom = 503.636
 rect_rotation = -5.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint1"]
-margin_right = 100.0
-margin_bottom = 160.0
+margin_left = -0.0871582
+margin_top = 0.996155
+margin_right = 99.9128
+margin_bottom = 160.996
 mouse_filter = 2
-color = Color( 0.407843, 0.0352941, 0.0352941, 1 )
+color = Color( 0.184314, 0.733333, 0.92549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CardPoint2" type="Control" parent="CardPoints"]
-margin_left = 650.688
-margin_top = 502.0
-margin_right = 650.688
-margin_bottom = 502.0
+margin_left = 620.354
+margin_top = 499.933
+margin_right = 620.354
+margin_bottom = 499.933
 rect_rotation = 5.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint2"]
-margin_right = 100.0
-margin_bottom = 160.0
+margin_left = 0.996216
+margin_top = -0.0871582
+margin_right = 100.996
+margin_bottom = 159.913
 mouse_filter = 2
-color = Color( 0.407843, 0.0352941, 0.0352941, 1 )
+color = Color( 0.443137, 0.443137, 0.443137, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CardPoint3" type="Control" parent="CardPoints"]
-margin_left = 785.0
-margin_top = 542.0
-margin_right = 785.0
-margin_bottom = 542.0
-rect_rotation = 10.0
+margin_left = 696.562
+margin_top = 507.361
+margin_right = 696.562
+margin_bottom = 507.361
+rect_rotation = 12.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -83,7 +87,7 @@ __meta__ = {
 margin_right = 100.0
 margin_bottom = 160.0
 mouse_filter = 2
-color = Color( 0.407843, 0.0352941, 0.0352941, 1 )
+color = Color( 0.92549, 0.45098, 0.0705882, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
