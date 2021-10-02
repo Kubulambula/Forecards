@@ -1,6 +1,6 @@
 extends Node
 
-enum {INVALID, RAIN, TORNADO}
+enum TYPES {INVALID, RAIN, TORNADO}
 
 var map = null
 

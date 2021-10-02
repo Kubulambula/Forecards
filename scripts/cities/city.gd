@@ -1,15 +1,34 @@
+tool
 extends Node2D
 
-var received_forecast = WeatherData.INVALID setget lol
+export(int, 1, 5) var city = 1 setget set_type
+export(int, 1, 999999) var population = 100
+export(float, 1, 250) var collision_radius = 80 setget set_radius
 
-func lol(what):
-	print(what)
+
+var forecast = WeatherData.TYPES.INVALID setget set_forecast
+
+
+func set_forecast(value):
+	forecast = value
+	print("Forecasted: ", value)
+
+
+func set_radius(value):
+	if Engine.editor_hint:
+		collision_radius = value
+		$Area2D/CollisionShape2D.shape.radius = value
+
+func set_type(value):
+	if Engine.editor_hint:
+		city = value
+		$Sprite.texture = load("res://assets/map/city_" + str(value) + ".png")
 
 
 func weather_effect(what):
-	if what == received_forecast:
+	if what == forecast:
 		# good
-		pass
+		print("good forecast")
 	else:
 		# bad
-		pass
+		print("bad forecast")
