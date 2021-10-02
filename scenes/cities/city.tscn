@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/cities/city.gd" type="Script" id=1]
-[ext_resource path="res://assets/map/city_4.png" type="Texture" id=2]
+[ext_resource path="res://assets/map/city_2.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 80.0
@@ -10,18 +10,25 @@ radius = 80.0
 "cities",
 ]]
 script = ExtResource( 1 )
-city = 4
-population = 100
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.65, 0.65 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
 [node name="FaceOrigin" type="Node2D" parent="."]
 position = Vector2( -67.1751, 60.1041 )
+
+[node name="CardHolder" type="Control" parent="."]
+margin_left = -24.0416
+margin_top = 21.9203
+margin_right = -24.0416
+margin_bottom = 21.9203
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
