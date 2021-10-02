@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/font/a-angkanya-sebelas-font/AngkanyaSebelas-qZXA5.otf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/map/map.png" type="Texture" id=2]
+[ext_resource path="res://assets/map/sky.jpg" type="Texture" id=2]
 [ext_resource path="res://scripts/MainMenu.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
@@ -12,6 +12,46 @@ font_data = ExtResource( 1 )
 size = 70
 font_data = ExtResource( 1 )
 
+[sub_resource type="Animation" id=3]
+resource_name = "Fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.7, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CenterContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("sky:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.14454, 1.25449 ), Vector2( 22, 22 ) ]
+}
+
 [node name="MarginContainer" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,9 +60,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="map" type="Sprite" parent="."]
-position = Vector2( 1375.39, -73.3538 )
-scale = Vector2( 1.47193, 1.48625 )
+[node name="sky" type="Sprite" parent="."]
+position = Vector2( 646.821, 375.432 )
+scale = Vector2( 1.14454, 1.25449 )
 texture = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -131,3 +171,11 @@ rect_min_size = Vector2( 158, 0 )
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0.0470588, 0.203922, 0.929412, 1 )
 text = "Exit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Fade_in = SubResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0.1 )
+margin_right = 1280.0
+margin_bottom = 720.0
