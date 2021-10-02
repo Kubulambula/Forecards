@@ -23,7 +23,6 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint4"]
-visible = false
 margin_right = 100.0
 margin_bottom = 160.0
 mouse_filter = 2
@@ -43,7 +42,6 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint0"]
-visible = false
 margin_right = 100.0
 margin_bottom = 160.0
 mouse_filter = 2
@@ -63,7 +61,6 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint1"]
-visible = false
 margin_right = 100.0
 margin_bottom = 160.0
 mouse_filter = 2
@@ -83,7 +80,6 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint2"]
-visible = false
 margin_left = 0.996216
 margin_top = -0.0871582
 margin_right = 100.996
@@ -105,7 +101,6 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint3"]
-visible = false
 margin_right = 100.0
 margin_bottom = 160.0
 mouse_filter = 2
@@ -125,7 +120,6 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint5"]
-visible = false
 margin_right = 100.0
 margin_bottom = 160.0
 mouse_filter = 2
