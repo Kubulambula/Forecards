@@ -1,6 +1,8 @@
 class_name Card
 extends Control
 
+var type = WeatherData.INVALID
+
 signal selected(what)
 signal deselected(what)
 
@@ -22,6 +24,10 @@ func _on_Card_gui_input(event):
 				var cities = get_cities_beneath()
 				if not cities:
 					go_to_origin = true
+				else:
+					# some effect and then return
+					for city in cities:
+						city.received_forecast = type
 				emit_signal("deselected", self)
 
 
@@ -39,5 +45,5 @@ func get_cities_beneath():
 	var cities = []
 	for city in $Area2D.get_overlapping_areas():
 		if city.get_parent().is_in_group("cities"):
-			cities.append(city)
+			cities.append(city.get_parent())
 	return cities
