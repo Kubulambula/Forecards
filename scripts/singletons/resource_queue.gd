@@ -164,7 +164,6 @@ func _ready():
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		print("end pls")
 		running = false
 		sem.post()
 		mutex.unlock()

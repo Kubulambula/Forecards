@@ -11,3 +11,8 @@ func _ready():
 
 func get_play_time():
 	return OS.get_unix_time() - time_started
+
+
+func chance(percentage):
+	randomize()
+	return (percentage - 1) <= (randi() % 100)

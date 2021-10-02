@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://assets/map/map.png" type="Texture" id=1]
 [ext_resource path="res://scenes/cards/card_container.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/cities/city.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/weather/technical/weather_director.gd" type="Script" id=4]
@@ -8,15 +8,16 @@
 [node name="Map" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 602.192, 385.101 )
-scale = Vector2( 19.8185, 13.0344 )
+scale = Vector2( 0.67, 0.67 )
 texture = ExtResource( 1 )
+centered = false
 
 [node name="CardContainer" parent="." instance=ExtResource( 2 )]
 
 [node name="Cities" type="Node2D" parent="."]
 
 [node name="Node2D" parent="Cities" instance=ExtResource( 3 )]
+position = Vector2( 157.322, 226.244 )
 
 [node name="Node2D2" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 417.085, 255.633 )
@@ -35,3 +36,4 @@ position = Vector2( 134.543, 558.355 )
 
 [node name="WeatherDirector" type="Node2D" parent="."]
 script = ExtResource( 4 )
+allowed_effects = [ 0, 0, 0, 0, 0 ]
