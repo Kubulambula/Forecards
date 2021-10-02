@@ -12,10 +12,12 @@ var selected = false
 var go_to_origin = false
 var zero_rotation = 0
 
+
 func _on_Card_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == 1:
 			if event.is_pressed():
+				offset = get_local_mouse_position()
 				selected = true
 				go_to_origin = false
 				emit_signal("selected", self)
@@ -34,7 +36,7 @@ func _on_Card_gui_input(event):
 func _process(_delta):
 	if selected:
 		rect_rotation = lerp(rect_rotation, zero_rotation, 0.35)
-		rect_global_position = get_global_mouse_position() + offset
+		rect_global_position = get_global_mouse_position() - offset
 #		rect_rotation = zero_rotation
 	elif go_to_origin:
 		rect_global_position = lerp(rect_global_position, origin_card_point.rect_global_position, 0.2)
