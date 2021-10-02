@@ -3,9 +3,6 @@ extends Control
 
 var type = 0 # change to invalid after debug
 
-signal selected(what)
-signal deselected(what)
-
 var offset = Vector2(0,0)
 var zero_rotation = 0
 var origin_card_point = self
@@ -19,6 +16,7 @@ func _on_Card_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == 1:
 			if event.is_pressed():
+				$AnimatedSprite.playing = true
 				offset = get_local_mouse_position()
 				selected = true
 				go_to_origin = false
@@ -27,6 +25,7 @@ func _on_Card_gui_input(event):
 					city.forecast_card = null
 					city = null
 			else:
+				$AnimatedSprite.playing = false
 				selected = false
 				var cities = get_cities_beneath()
 				

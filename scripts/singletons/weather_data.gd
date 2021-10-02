@@ -1,6 +1,6 @@
 extends Node
 
-enum TYPES {INVALID, RAIN, TORNADO, FIRE}
+enum TYPES {INVALID, RAIN, TORNADO, FIRE, ROCK}
 var empty_card = preload("res://scenes/cards/card.tscn").instance()
 var map = null
 
