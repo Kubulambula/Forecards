@@ -12,20 +12,129 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CardPoint5" type="Control" parent="CardPoints"]
+margin_left = 415.35
+margin_top = 543.485
+margin_right = 415.35
+margin_bottom = 543.485
+rect_rotation = -19.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint5"]
+margin_right = 100.0
+margin_bottom = 160.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CardPoint0" type="Control" parent="CardPoints"]
+<<<<<<< Updated upstream
 margin_left = 670.151
 margin_top = 545.559
 margin_right = 670.151
 margin_bottom = 545.559
+=======
+margin_left = 470.853
+margin_top = 525.399
+margin_right = 470.853
+margin_bottom = 525.399
+rect_rotation = -14.7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint0"]
+margin_right = 100.0
+margin_bottom = 160.0
+mouse_filter = 2
+color = Color( 0.54902, 0.592157, 0.941176, 1 )
+>>>>>>> Stashed changes
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CardPoint1" type="Control" parent="CardPoints"]
+<<<<<<< Updated upstream
 margin_left = 424.744
 margin_top = 415.305
 margin_right = 424.744
 margin_bottom = 415.305
+=======
+margin_left = 545.02
+margin_top = 506.0
+margin_right = 545.02
+margin_bottom = 506.0
+rect_rotation = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint1"]
+margin_right = 100.0
+margin_bottom = 160.0
+mouse_filter = 2
+color = Color( 0.0352941, 0.0509804, 0.407843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardPoint2" type="Control" parent="CardPoints"]
+margin_left = 613.534
+margin_top = 500.0
+margin_right = 613.534
+margin_bottom = 500.0
+rect_rotation = 5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint2"]
+margin_right = 100.0
+margin_bottom = 160.0
+mouse_filter = 2
+color = Color( 0.462745, 0.462745, 0.462745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardPoint3" type="Control" parent="CardPoints"]
+margin_left = 686.823
+margin_top = 508.131
+margin_right = 686.823
+margin_bottom = 508.131
+rect_rotation = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint3"]
+margin_right = 100.0
+margin_bottom = 160.0
+mouse_filter = 2
+color = Color( 0.952941, 0.521569, 0.141176, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardPoint4" type="Control" parent="CardPoints"]
+margin_left = 749.094
+margin_top = 524.183
+margin_right = 749.094
+margin_bottom = 524.183
+rect_rotation = 24.6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="CardPoints/CardPoint4"]
+margin_right = 100.0
+margin_bottom = 160.0
+mouse_filter = 2
+color = Color( 0.282353, 0.952941, 0.141176, 1 )
+>>>>>>> Stashed changes
 __meta__ = {
 "_edit_use_anchors_": false
 }
