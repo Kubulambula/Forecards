@@ -2,7 +2,7 @@ tool
 extends Node2D
 
 export(int, 1, 5) var city = 1 setget set_type
-export(int, 1, 999999) var population = 100
+export(int, 1, 3) var population = 2
 export(float, 1, 250) var collision_radius = 80 setget set_radius
 
 
@@ -25,8 +25,8 @@ func set_type(value):
 		$Sprite.texture = load("res://assets/map/city_" + str(value) + ".png")
 
 
-func weather_effect(what):
-	if what == forecast:
+func weather_effect(type, _deadly):
+	if type == forecast:
 		# good
 		print("good forecast")
 	else:

@@ -21,19 +21,22 @@ centered = false
 position = Vector2( 157.322, 226.244 )
 
 [node name="Node2D2" parent="Cities" instance=ExtResource( 3 )]
-position = Vector2( 417.085, 255.633 )
+position = Vector2( 398.585, 396.904 )
+city = 2
 
 [node name="Node2D3" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 935.077, 136.225 )
+city = 3
 
 [node name="Node2D4" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 533.128, 184.997 )
 
 [node name="Node2D5" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 933.395, 487.72 )
+city = 5
 
 [node name="Node2D6" parent="Cities" instance=ExtResource( 3 )]
-position = Vector2( 134.543, 558.355 )
+position = Vector2( 227.042, 474.265 )
 
 [node name="WeatherDirector" type="Node2D" parent="."]
 script = ExtResource( 4 )

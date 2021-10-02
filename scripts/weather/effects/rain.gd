@@ -9,7 +9,7 @@ var t = 0
 
 func _on_Area2D_area_entered(area):
 	if area.get_parent().is_in_group("cities"):
-		area.get_parent().weather_effect(WeatherData.TYPES.RAIN)
+		area.get_parent().weather_effect(WeatherData.TYPES.RAIN, false)
 
 
 func _process(delta):
