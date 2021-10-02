@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 85.0702, 58.8714 )
 
-[node name="Node2D" type="Node2D" groups=[
+[node name="Node2D2" type="Node2D" groups=[
 "cities",
 ]]
 script = ExtResource( 1 )

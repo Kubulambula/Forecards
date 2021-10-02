@@ -28,7 +28,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-WeatherData="*res://scripts/weather_data.gd"
+WeatherData="*res://scripts/singletons/weather_data.gd"
+ResourceQueue="*res://scripts/singletons/resource_queue.gd"
 
 [display]
 
