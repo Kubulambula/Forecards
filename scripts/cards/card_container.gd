@@ -20,8 +20,8 @@ func setup(cards):
 			push_error("not enough points to put cards in :(")
 
 
-func selected(what):
+func selected(_what):
 	pass
 	
-func deselected(what):
+func deselected(_what):
 	pass
