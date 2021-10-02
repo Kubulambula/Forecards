@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/cards/card.gd" type="Script" id=1]
+
+[node name="Card" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1180.0
+margin_bottom = -560.0
+rect_min_size = Vector2( 100, 160 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 100.0
+margin_bottom = 160.0
+mouse_filter = 2
+color = Color( 0.407843, 0.0352941, 0.0352941, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="gui_input" from="." to="." method="_on_Card_gui_input"]
