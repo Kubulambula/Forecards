@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Weather"
-run/main_scene="res://scenes/maps/map0.tscn"
+run/main_scene="res://scenes/ui/MainMenu.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Weather"
 config/icon="res://icon.png"
@@ -35,10 +35,8 @@ ResourceQueue="*res://scripts/singletons/resource_queue.gd"
 
 window/size/width=1280
 window/size/height=720
-window/size/fullscreen=true
+window/size/resizable=false
 window/dpi/allow_hidpi=true
-window/stretch/mode="2d"
-window/stretch/aspect="keep"
 
 [physics]
 
