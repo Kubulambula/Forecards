@@ -17,6 +17,4 @@ texture = ExtResource( 1 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PoolVector2Array( -147.608, 76.5971, -45.4924, 81.269, 144.055, 89.2781, 117.358, 42.5587, 83.9871, -36.1969, 2.56183, -75.5746, -65.515, -59.5566, -108.23, -10.8349, -118.241, 28.5429 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

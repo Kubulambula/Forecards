@@ -81,4 +81,4 @@ func do_weather():
 			forecast_card.city = null
 			forecast_card.go_to_city = false
 			forecast_card.go_to_origin = true
-	
+	forecast_card = null
