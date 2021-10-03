@@ -3,11 +3,8 @@ extends Node2D
 export(int, 1, 1800) var sec_duration = 600 # 10 minut
 export(float, 0.1, 60) var weather_update_tick_rate = 3
 export(float, 0.1, 60) var weather_update_tick_rate_random_delay = 5
-export(bool) var allowed_rain = true
-export(bool) var allowed_fire = false
-export(bool) var allowed_rock = false
-export(bool) var allowed_tornado = false
-export(int, 1, 100) var max_weather_effects = 4 
+export(int, 1, 100) var max_weather_effects = 4
+export(int, 1, 100) var max_weather_effects_of_same_type = 2 
 var can_spawn = false setget set_can_spawn
 var weather_effect_spawners = []
 var time_started
@@ -15,15 +12,21 @@ var end_timer
 var lazy_update_timer
 
 var effects = [
-	preload("res://scenes/weather/effects/rain.tscn"),
-	preload("res://scenes/weather/effects/tornado.tscn"),
-	preload("res://scenes/weather/effects/fire.tscn"),
-	preload("res://scenes/weather/effects/rock.tscn"),
-	preload("res://scenes/weather/effects/snow.tscn"),
-	preload("res://scenes/weather/effects/acid.tscn")
+	"res://scenes/weather/effects/rain.tscn",
+	"res://scenes/weather/effects/tornado.tscn",
+	"res://scenes/weather/effects/fire.tscn",
+	"res://scenes/weather/effects/rock.tscn",
+	"res://scenes/weather/effects/snow.tscn",
+	"res://scenes/weather/effects/acid.tscn"
 ]
 
+var effects_count = {}
+
 func _ready():
+	
+	for effect in effects:
+		effects_count[effect] = 0
+	
 	weather_effect_spawners = $Spawners.get_children()
 	time_started = OS.get_unix_time()
 	
@@ -70,4 +73,17 @@ func lazy_update():
 	if can_spawn and get_active_weather_effect_count() < max_weather_effects:
 		for spawner in weather_effect_spawners:
 			if spawner.current_effect == null:
-				spawner.spawn(effects[randi()%effects.size()], $WeatherContainer)
+				while true:
+					var index = randi() % effects.size()
+					if effects_count[effects[index]] <= max_weather_effects_of_same_type:
+						spawner.spawn(load(effects[index]), $WeatherContainer)
+						break
+					continue
+				
+				
+				
+				
+				
+				
+				
+#				spawner.spawn(effects[randi()%effects.size()], $WeatherContainer)
