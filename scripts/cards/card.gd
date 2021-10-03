@@ -49,7 +49,6 @@ func _on_Card_gui_input(event):
 					_:
 						for c in cities:
 							if c.forecast_card == null:
-								print("found empty")
 								city = c
 								c.forecast_card = self
 								go_to_city = true
@@ -69,7 +68,7 @@ func _on_Card_gui_input(event):
 func _process(_delta):
 	if selected:
 		rect_rotation = lerp(rect_rotation, zero_rotation, 0.17)
-		rect_global_position = lerp(rect_global_position, get_global_mouse_position() - offset, 0.8)
+		rect_global_position = lerp(rect_global_position, get_global_mouse_position() - offset, 0.5)
 		rect_scale = lerp(rect_scale, Vector2(1,1), 0.3)
 	elif go_to_city:
 		rect_rotation = lerp(rect_rotation, zero_rotation, 0.2)

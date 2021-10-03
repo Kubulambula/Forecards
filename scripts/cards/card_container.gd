@@ -1,5 +1,7 @@
-extends CanvasLayer
+extends Control
 
+
+#TODO reparent card if in city or hand
 
 func _ready():
 	WeatherData.card_container = self

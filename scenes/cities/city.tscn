@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 80.0
 
-[node name="Node2D2" type="Node2D" groups=[
+[node name="City" type="Node2D" groups=[
 "cities",
 ]]
 scale = Vector2( 0.8, 0.8 )
@@ -36,3 +36,9 @@ rect_scale = Vector2( 0.7, 0.7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
