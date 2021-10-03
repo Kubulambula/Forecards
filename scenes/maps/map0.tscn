@@ -18,8 +18,20 @@ offset = Vector2( -844.8, -475.2 )
 [node name="Cities" type="Node2D" parent="."]
 
 [node name="City" parent="Cities" instance=ExtResource( 3 )]
-position = Vector2( 262.656, 267.146 )
+position = Vector2( 277.336, 273.289 )
 population = 1
+
+[node name="City2" parent="Cities" instance=ExtResource( 3 )]
+position = Vector2( 1009.75, 511.945 )
+
+[node name="City3" parent="Cities" instance=ExtResource( 3 )]
+position = Vector2( 313.661, 533.715 )
+
+[node name="City4" parent="Cities" instance=ExtResource( 3 )]
+position = Vector2( 620.84, 360.624 )
+
+[node name="City5" parent="Cities" instance=ExtResource( 3 )]
+position = Vector2( 993.623, 218.32 )
 
 [node name="CardContainer" parent="." instance=ExtResource( 2 )]
 
@@ -31,7 +43,19 @@ script = ExtResource( 4 )
 [node name="Spawners" type="Node2D" parent="WeatherDirector"]
 
 [node name="DirectionalSpawnPoint3" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
-position = Vector2( 8.78113, 99.1509 )
+position = Vector2( -294.238, -133.18 )
+
+[node name="DirectionalSpawnPoint4" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
+position = Vector2( 1563.76, 583.855 )
+cast_to = Vector2( -50, -50 )
+
+[node name="DirectionalSpawnPoint5" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
+position = Vector2( -276.396, 370.697 )
+cast_to = Vector2( 50, 25 )
+
+[node name="DirectionalSpawnPoint6" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
+position = Vector2( 689.01, -94.5992 )
+cast_to = Vector2( -10, 50 )
 
 [node name="Deleters" type="Node2D" parent="."]
 
@@ -44,11 +68,11 @@ position = Vector2( 682.294, 1483.25 )
 scale = Vector2( 150, 1 )
 
 [node name="Deleter3" parent="Deleters" instance=ExtResource( 1 )]
-position = Vector2( 520.676, 425.667 )
+position = Vector2( 2247.67, 222.14 )
 rotation = 1.5708
 scale = Vector2( 150, 1 )
 
 [node name="Deleter4" parent="Deleters" instance=ExtResource( 1 )]
-position = Vector2( -945.041, 283.936 )
+position = Vector2( -867.37, 302.698 )
 rotation = 1.5708
 scale = Vector2( 150, 1 )

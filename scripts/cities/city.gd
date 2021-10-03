@@ -45,6 +45,7 @@ func add_to_population(count=1, deadly=false):
 	$Reputation.texture = faces[population]
 	if population == 0:
 		$Sprite.texture = load("res://assets/map/city_" + str(city) + "_destroyed.png")
+		$AudioStreamPlayer.play()
 	$Reputation.emitting = true
 
 func weather_effect(type, deadly):
