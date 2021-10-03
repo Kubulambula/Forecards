@@ -22,13 +22,15 @@ func happy():
 	for city in get_tree().get_nodes_in_group(\"cities\"):
 		happy += city.population
 	desired_rot = remap_value_between_ranges(happy, Vector2(0, max_happy), happy_range)
+	if happy == 0:
+		print(\"Game Over\")
 
 
 func remap_value_between_ranges(value: float, old_range: Vector2, new_range: Vector2) -> float:
 	return ((value - old_range.x) / (old_range.y - old_range.x)) * (new_range.y - new_range.x) + new_range.x
 
 
-func _process(delta):
+func _process(_delta):
 	$Sprite2/Sprite.rotation_degrees = lerp($Sprite2/Sprite.rotation_degrees, desired_rot, 0.35)
 "
 
@@ -48,6 +50,7 @@ tracks/0/keys = {
 }
 
 [node name="GUI" type="CanvasLayer"]
+pause_mode = 2
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

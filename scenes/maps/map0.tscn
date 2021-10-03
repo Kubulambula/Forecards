@@ -62,7 +62,7 @@ position = Vector2( -276.396, 370.697 )
 cast_to = Vector2( 50, 25 )
 
 [node name="DirectionalSpawnPoint6" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
-position = Vector2( 689.01, -94.5992 )
+position = Vector2( 738.399, -273.468 )
 cast_to = Vector2( -10, 50 )
 
 [node name="Deleters" type="Node2D" parent="."]

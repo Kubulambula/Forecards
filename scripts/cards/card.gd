@@ -10,6 +10,7 @@ var selected = false
 var go_to_origin = false
 var go_to_city = false
 var city = null
+export(float) var test_zoom
 
 
 func _on_Card_gui_input(event):
@@ -78,7 +79,11 @@ func _process(_delta):
 		rect_scale = lerp(rect_scale, Vector2(1,1), 0.3)
 	elif go_to_city:
 		rect_rotation = lerp(rect_rotation, zero_rotation, 0.2)
-		rect_global_position = lerp(rect_global_position, city.get_node("CardHolder").rect_global_position, 0.2)
+		var cityPosWS = city.get_node("CardHolder").rect_global_position
+		var cityPosSS = ((cityPosWS - Vector2(640, 360)) / WeatherData.camera.zoom.x) + Vector2(640, 360)  
+		print(test_zoom)
+		var cardPosSS = rect_global_position
+		rect_global_position = lerp(cardPosSS, cityPosSS, 0.2)		
 		rect_scale = lerp(rect_scale, city.get_node("CardHolder").rect_scale, 0.4)
 	elif go_to_origin:
 		rect_global_position = lerp(rect_global_position, origin_card_point.rect_global_position, 0.2)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/ui/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/maps/map0.tscn" type="PackedScene" id=2]
@@ -25,28 +25,28 @@ tracks/0/keys = {
 "values": [ Vector2( 1.8, 1.8 ), Vector2( 1.3, 1.3 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Menu/buttons/Sprite2:modulate")
+tracks/1/path = NodePath("Menu/buttons/Sprite:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.66 ),
+"times": PoolRealArray( 0.02, 0.62 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Menu/buttons/Sprite2:disabled")
+tracks/2/path = NodePath("Menu/buttons/Sprite2:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.66 ),
+"times": PoolRealArray( 0, 0.63 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ false, true ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Menu/buttons/Sprite:disabled")
@@ -55,23 +55,94 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.66 ),
+"times": PoolRealArray( 0, 0.62 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 0,
+"update": 1,
 "values": [ false, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Menu/buttons/Sprite:modulate")
+tracks/4/path = NodePath("Menu/buttons/Sprite2:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.65 ),
+"times": PoolRealArray( 0, 0.63 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Menu/buttons:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.68, 1.29 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 10000 ) ]
 }
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Node2D
+
+
+func play():
+	for c in get_children():
+		c.play(\"cloud\")
+		c.advance(12)
+
+
+func playb():
+	for c in get_children():
+		c.play_backwards(\"cloud\")
+		c.advance(12)
+"
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Sprite
+
+signal pressed
+signal released
+signal hover(value)
+
+
+export(String) var text = \"Sample Text\"
+export(Vector2) var hover_scale = Vector2(1.1, 1.1)
+
+var _scale = Vector2(1,1)
+export(bool) var disabled = false
+
+func _ready():
+	$MarginContainer/Label.text = text
+	_scale = scale
+	hover_scale = scale * hover_scale
+
+
+func _on_MarginContainer_mouse_entered():
+	scale = hover_scale
+	emit_signal(\"hover\", true)
+
+
+func _on_MarginContainer_mouse_exited():
+	scale = _scale
+	emit_signal(\"hover\", false)
+
+
+func _on_MarginContainer_gui_input(event):
+	if not disabled:
+		if event is InputEventMouseButton and event.button_index == 1 and event.pressed and not event.is_echo():
+			scale = _scale
+			print(\"pressed\")
+			emit_signal(\"pressed\")
+			
+		elif event is InputEventMouseButton and event.button_index == 1 and not event.pressed and not event.is_echo():
+			scale = hover_scale
+			emit_signal(\"released\")
+			print(\"released\")
+"
 
 [node name="Main" type="Node2D"]
 pause_mode = 2
@@ -90,13 +161,30 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/start = SubResource( 1 )
 
-[node name="Menu" type="Node2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = 5.0
+pitch_scale = 0.9
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -8.0
+pitch_scale = 0.7
+autoplay = true
+
+[node name="GUI" parent="." instance=ExtResource( 1 )]
+
+[node name="Menu" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
 
 [node name="Clouds" type="Node2D" parent="Menu"]
 
 [node name="Clouds" parent="Menu/Clouds" instance=ExtResource( 4 )]
+script = SubResource( 2 )
 
 [node name="Clouds2" parent="Menu/Clouds" instance=ExtResource( 4 )]
+script = SubResource( 2 )
 
 [node name="buttons" type="Node2D" parent="Menu"]
 z_index = 10
@@ -104,13 +192,16 @@ z_index = 10
 [node name="Sprite" parent="Menu/buttons" instance=ExtResource( 7 )]
 position = Vector2( 640, 220 )
 scale = Vector2( 0.75, 0.75 )
+script = SubResource( 3 )
 text = "Play"
 
 [node name="Sprite2" parent="Menu/buttons" instance=ExtResource( 7 )]
-position = Vector2( 640, 500 )
+position = Vector2( 640, 400 )
 scale = Vector2( 0.75, 0.75 )
+script = SubResource( 3 )
 text = "Quit"
 
+<<<<<<< Updated upstream
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 volume_db = 5.0
@@ -122,6 +213,9 @@ volume_db = -8.0
 autoplay = true
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
+=======
+[node name="GameOver" type="Node2D" parent="Menu"]
+>>>>>>> Stashed changes
 
 [connection signal="pressed" from="Menu/buttons/Sprite" to="." method="_on_Sprite_pressed"]
 [connection signal="pressed" from="Menu/buttons/Sprite2" to="." method="_on_Sprite2_pressed"]

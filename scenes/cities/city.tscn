@@ -8,7 +8,7 @@
 [ext_resource path="res://audio/rybnicek_ (mp3cut.net).wav" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 80.0
+radius = 90.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "face_in"

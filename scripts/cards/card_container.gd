@@ -10,7 +10,7 @@ func _ready():
 # WeatherData call this after MapData.card_container = self (setget)
 func setup(cards):
 	# Serazeno podle toho jak jsou ve scenetree zeshora dolu
-	var card_points = $CardPoints.get_children()
+	var card_points = $CanvasLayer/CardPoints.get_children()
 	for i in cards.size():
 		if i < card_points.size():
 			var card = load(cards[i]).instance()

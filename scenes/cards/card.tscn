@@ -15,6 +15,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+test_zoom = 2.526
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
