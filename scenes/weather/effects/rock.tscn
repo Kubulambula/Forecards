@@ -26,6 +26,7 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+rotation = -5.49529
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 

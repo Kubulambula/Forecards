@@ -25,7 +25,7 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="weather_blizzard" type="Sprite" parent="."]
-position = Vector2( 6.58273, 20.8031 )
+position = Vector2( 7.58799, 20.8031 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
 
