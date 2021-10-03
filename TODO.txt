@@ -3,7 +3,6 @@ smrt
 karty zvuk efek 
 credits
 tutorial
-menu
 
 zvuk: 
 karta vzít položit 

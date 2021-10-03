@@ -8,6 +8,7 @@ func _ready():
 	$Menu/Clouds/Clouds2.playb()
 	for city in get_tree().get_nodes_in_group("cities"):
 		city.get_node("Face").modulate = Color("#00ffffff")
+	WeatherData.gui.get_node("Sprite2").modulate = Color("#00ffffff")
 
 
 func to_play():
@@ -19,6 +20,7 @@ func to_play():
 	$Menu/Clouds/Clouds2/FadePlayer.play("fade")
 	for city in get_tree().get_nodes_in_group("cities"):
 		city.get_node("AnimationPlayer").play("face_in")
+	WeatherData.gui.get_node("AnimationPlayer").play("hide")
 
 
 func to_menu():
@@ -29,9 +31,10 @@ func to_menu():
 	$Menu/Clouds/Clouds2/FadePlayer.play_backwards("fade")
 	for city in get_tree().get_nodes_in_group("cities"):
 		city.get_node("AnimationPlayer").play_backwards("face_in")
+	WeatherData.gui.get_node("AnimationPlayer").play_backwards("hide")
 
 func _input(event):
-	if event is InputEventKey and not event.is_echo() and event.is_pressed():
+	if event is InputEventKey and not event.is_echo() and event.is_pressed() and event.scancode == KEY_ESCAPE:
 		if playing:
 			to_menu()
 		else:
