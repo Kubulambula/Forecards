@@ -18,9 +18,17 @@ offset = Vector2( -844.8, -475.2 )
 
 [node name="Cities" type="Node2D" parent="."]
 
+<<<<<<< Updated upstream
 [node name="Node2D2" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 330.926, 237.588 )
 city = 2
+=======
+[node name="City" parent="Cities" instance=ExtResource( 3 )]
+position = Vector2( 403.293, 458.753 )
+population = 1
+
+[node name="CardContainer" parent="." instance=ExtResource( 2 )]
+>>>>>>> Stashed changes
 
 [node name="Node2D3" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 347.897, 480.833 )
@@ -35,8 +43,25 @@ position = Vector2( 958.837, 414.365 )
 position = Vector2( 685.894, 446.892 )
 city = 3
 
+<<<<<<< Updated upstream
 [node name="WeatherDirector" type="Node2D" parent="."]
 script = ExtResource( 4 )
 allowed_effects = [ 0, 0, 0, 0, 0 ]
+=======
+[node name="Deleters" type="Node2D" parent="."]
+
+[node name="Deleter" parent="Deleters" instance=ExtResource( 1 )]
+position = Vector2( 644.153, -682.294 )
+scale = Vector2( 150, 1 )
+
+[node name="Deleter2" parent="Deleters" instance=ExtResource( 1 )]
+position = Vector2( 682.294, 1483.25 )
+scale = Vector2( 150, 1 )
+
+[node name="Deleter3" parent="Deleters" instance=ExtResource( 1 )]
+position = Vector2( 639.47, 422.839 )
+rotation = 1.5708
+scale = Vector2( 150, 1 )
+>>>>>>> Stashed changes
 
 [node name="DirectionalSpawnPoint" parent="WeatherDirector" instance=ExtResource( 5 )]
