@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/map/boarder.png" type="Texture" id=1]
 [ext_resource path="res://scenes/maps/map0.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/ui/main.gd" type="Script" id=3]
-[ext_resource path="res://scenes/ui/Clouds.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "start"
@@ -47,8 +46,3 @@ centered = false
 __meta__ = {
 "_editor_description_": ""
 }
-
-[node name="MenuClouds" type="Node2D" parent="."]
-
-[node name="Clouds" parent="MenuClouds" instance=ExtResource( 4 )]
-scale = Vector2( 5, 1 )

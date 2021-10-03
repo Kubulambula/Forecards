@@ -45,7 +45,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 34.9 ),
+"times": PoolRealArray( 0, 35 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -600.304, 200 ), Vector2( 1800, 200 ) ]
@@ -62,7 +62,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 29.8 ),
+"times": PoolRealArray( 0, 30 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -494.59, 450 ), Vector2( 1900, 450 ) ]
@@ -96,7 +96,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 22.9 ),
+"times": PoolRealArray( 0, 23 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -490.815, 373.774 ), Vector2( 1800, 373.774 ) ]
@@ -109,7 +109,7 @@ script = SubResource( 6 )
 anims/cloud = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer5"]
-position = Vector2( -645.61, 332.244 )
+position = Vector2( -475.21, 332.244 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
 
@@ -142,7 +142,7 @@ texture = ExtResource( 2 )
 anims/cloud = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer4"]
-position = Vector2( -490.815, 373.774 )
+position = Vector2( 1383.7, 373.774 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 flip_h = true
