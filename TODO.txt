@@ -1,1 +1,14 @@
-víc času na předpověď i když počasí přišlo na město
+score 
+smrt 
+karty zvuk efek 
+credits
+tutorial
+menu
+
+zvuk: 
+karta vzít položit 
+tornádo 
+slunce 
+křik 
+balvan
+acid sičeí

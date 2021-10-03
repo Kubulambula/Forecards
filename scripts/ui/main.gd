@@ -37,3 +37,11 @@ func _input(event):
 			to_menu()
 		else:
 			to_play()
+
+
+func _on_Sprite_pressed():
+	to_play()
+
+
+func _on_Sprite2_pressed():
+	get_tree().quit()
