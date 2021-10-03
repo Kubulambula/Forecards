@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PhantomArt  Moheln ulice Zatracen Official fanmade book theme (mp3cut.net).mp3-9d99b51276b197dd09f6de9d9e524223.mp3str"
+
+[deps]
+
+source_file="res://audio/music/PhantomArt  Moheln ulice Zatracen Official fanmade book theme (mp3cut.net).mp3"
+dest_files=[ "res://.import/PhantomArt  Moheln ulice Zatracen Official fanmade book theme (mp3cut.net).mp3-9d99b51276b197dd09f6de9d9e524223.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

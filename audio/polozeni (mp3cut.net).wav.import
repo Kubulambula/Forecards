@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/polozeni (mp3cut.net).wav-f92bbc9c74a30eaef03af3118108a0fe.sample"
+
+[deps]
+
+source_file="res://audio/polozeni (mp3cut.net).wav"
+dest_files=[ "res://.import/polozeni (mp3cut.net).wav-f92bbc9c74a30eaef03af3118108a0fe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

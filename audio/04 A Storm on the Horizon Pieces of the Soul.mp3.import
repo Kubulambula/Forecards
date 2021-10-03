@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/04 A Storm on the Horizon Pieces of the Soul.mp3-f143815ae6eae2f54b905f0a69f3ea64.mp3str"
+
+[deps]
+
+source_file="res://audio/04 A Storm on the Horizon Pieces of the Soul.mp3"
+dest_files=[ "res://.import/04 A Storm on the Horizon Pieces of the Soul.mp3-f143815ae6eae2f54b905f0a69f3ea64.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -29,14 +29,13 @@ city = 5
 position = Vector2( 314.85, 534.904 )
 city = 2
 
-[node name="City4" parent="Cities" instance=ExtResource( 3 )]
-position = Vector2( 620.84, 360.624 )
-city = 4
-population = 1
-
 [node name="City5" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 993.623, 218.32 )
 city = 3
+
+[node name="City4" parent="Cities" instance=ExtResource( 3 )]
+position = Vector2( 637.969, 379.623 )
+city = 4
 
 [node name="CardContainer" parent="." instance=ExtResource( 2 )]
 
@@ -53,6 +52,10 @@ position = Vector2( -294.238, -133.18 )
 [node name="DirectionalSpawnPoint4" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
 position = Vector2( 1563.76, 583.855 )
 cast_to = Vector2( -50, -50 )
+
+[node name="DirectionalSpawnPoint7" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
+position = Vector2( 1021.82, 895.452 )
+cast_to = Vector2( 0, -50 )
 
 [node name="DirectionalSpawnPoint5" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
 position = Vector2( -276.396, 370.697 )
