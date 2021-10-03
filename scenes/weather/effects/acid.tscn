@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/map/weather_acid.png" type="Texture" id=1]
+[ext_resource path="res://scripts/weather/effects/acid.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D" groups=[
+"weather",
+]]
+script = ExtResource( 2 )
+
+[node name="weather_acid" type="Sprite" parent="."]
+position = Vector2( -1.00397, 22.8278 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -181.69, 73.4542, -84.1368, 87.2631, 167.542, 85.0359, 143.488, 25.3457, 83.7976, -50.8262, 2.56183, -75.5746, -65.515, -59.5566, -108.23, -10.8349, -142.491, 22.2275 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

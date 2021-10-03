@@ -27,6 +27,7 @@ tracks/0/keys = {
 [node name="City" type="Node2D" groups=[
 "cities",
 ]]
+pause_mode = 2
 scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 1 )
 
@@ -40,6 +41,7 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Face" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 90, -75 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )

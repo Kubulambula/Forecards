@@ -18,7 +18,9 @@ var effects = [
 	preload("res://scenes/weather/effects/rain.tscn"),
 	preload("res://scenes/weather/effects/tornado.tscn"),
 	preload("res://scenes/weather/effects/fire.tscn"),
-	preload("res://scenes/weather/effects/rock.tscn")
+	preload("res://scenes/weather/effects/rock.tscn"),
+	preload("res://scenes/weather/effects/snow.tscn"),
+	preload("res://scenes/weather/effects/acid.tscn")
 ]
 
 func _ready():
@@ -35,8 +37,6 @@ func _ready():
 	lazy_update_timer.connect("timeout", self, "lazy_update")
 	add_child(lazy_update_timer)
 	lazy_update_timer.start()
-
-
 
 
 func set_can_spawn(value):

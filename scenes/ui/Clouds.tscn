@@ -48,19 +48,19 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0.847059 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("AnimationPlayer3/weather_rain:modulate")
+tracks/2/path = NodePath("AnimationPlayer2/Sprite:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.847059 ) ]
+"values": [ Color( 1, 1, 1, 0.847059 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("AnimationPlayer3/weather_rain:self_modulate")
+tracks/3/path = NodePath("AnimationPlayer/AnimatedSprite:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -69,10 +69,10 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.854902 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0.847059 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("AnimationPlayer3/weather_rain2:modulate")
+tracks/4/path = NodePath("AnimationPlayer4/Sprite:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -84,36 +84,24 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0.847059 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("AnimationPlayer2/Sprite:modulate")
+tracks/5/path = NodePath("AnimationPlayer3/weather_rain2:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.847059 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0.847059 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("AnimationPlayer/AnimatedSprite:modulate")
+tracks/6/path = NodePath("AnimationPlayer3/weather_rain:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.847059 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("AnimationPlayer4/Sprite:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -238,7 +226,7 @@ anims/cloud = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="AnimationPlayer5"]
 modulate = Color( 1, 1, 1, 0.847059 )
-position = Vector2( -1134.42, -148.772 )
+position = Vector2( -1301.37, -144.927 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 2 )
 
