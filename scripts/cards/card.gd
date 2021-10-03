@@ -46,6 +46,8 @@ func _on_Card_gui_input(event):
 						cities[0].forecast_card = self
 						go_to_city = true
 						go_to_origin = false
+						particles()
+						
 					_:
 						for c in cities:
 							if c.forecast_card == null:
@@ -63,6 +65,7 @@ func _on_Card_gui_input(event):
 						cities[0].forecast_card = self
 						go_to_city = true
 						go_to_origin = false
+						particles()
 
 
 func _process(_delta):
@@ -89,3 +92,8 @@ func get_cities_beneath():
 		if _city.get_parent().is_in_group("cities"):
 			cities.append(_city.get_parent())
 	return cities
+
+
+func particles():
+	for c in $Particles.get_children():
+		c.emitting = true

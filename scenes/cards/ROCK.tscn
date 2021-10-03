@@ -42,46 +42,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Particles2D" type="Particles2D" parent="."]
-modulate = Color( 1, 1, 1, 0.52549 )
-position = Vector2( 52.8781, 38.4721 )
-scale = Vector2( 0.7, 0.7 )
-amount = 25
-lifetime = 1.5
-explosiveness = 1.0
-process_material = ExtResource( 4 )
-texture = ExtResource( 2 )
-
-[node name="Particles2D2" type="Particles2D" parent="."]
-modulate = Color( 1, 1, 1, 0.52549 )
-position = Vector2( 29.4502, 80.1289 )
-scale = Vector2( 0.7, 0.7 )
-amount = 25
-lifetime = 1.5
-explosiveness = 1.0
-process_material = ExtResource( 4 )
-texture = ExtResource( 2 )
-
-[node name="Particles2D3" type="Particles2D" parent="."]
-modulate = Color( 1, 1, 1, 0.52549 )
-position = Vector2( 85.2008, 75.6184 )
-scale = Vector2( 0.7, 0.7 )
-amount = 25
-lifetime = 1.5
-explosiveness = 1.0
-process_material = ExtResource( 4 )
-texture = ExtResource( 2 )
-
-[node name="Particles2D4" type="Particles2D" parent="."]
-modulate = Color( 1, 1, 1, 0.52549 )
-position = Vector2( 53.4434, 124.742 )
-scale = Vector2( 0.7, 0.7 )
-amount = 25
-lifetime = 1.5
-explosiveness = 1.0
-process_material = ExtResource( 4 )
-texture = ExtResource( 2 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.35, 0.35 )
 frames = SubResource( 4 )
@@ -97,5 +57,55 @@ shape = SubResource( 5 )
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="Particles" type="Node2D" parent="."]
+
+[node name="Particles2D" type="Particles2D" parent="Particles"]
+modulate = Color( 1, 1, 1, 0.52549 )
+position = Vector2( 52.8781, 38.4721 )
+scale = Vector2( 0.7, 0.7 )
+emitting = false
+amount = 25
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource( 4 )
+texture = ExtResource( 2 )
+
+[node name="Particles2D2" type="Particles2D" parent="Particles"]
+modulate = Color( 1, 1, 1, 0.52549 )
+position = Vector2( 29.4502, 80.1289 )
+scale = Vector2( 0.7, 0.7 )
+emitting = false
+amount = 25
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource( 4 )
+texture = ExtResource( 2 )
+
+[node name="Particles2D3" type="Particles2D" parent="Particles"]
+modulate = Color( 1, 1, 1, 0.52549 )
+position = Vector2( 85.2008, 75.6184 )
+scale = Vector2( 0.7, 0.7 )
+emitting = false
+amount = 25
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource( 4 )
+texture = ExtResource( 2 )
+
+[node name="Particles2D4" type="Particles2D" parent="Particles"]
+modulate = Color( 1, 1, 1, 0.52549 )
+position = Vector2( 53.4434, 124.742 )
+scale = Vector2( 0.7, 0.7 )
+emitting = false
+amount = 25
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource( 4 )
+texture = ExtResource( 2 )
 
 [connection signal="gui_input" from="." to="." method="_on_Card_gui_input"]
