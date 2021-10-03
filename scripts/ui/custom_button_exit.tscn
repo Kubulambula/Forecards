@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/map/menu_button.png" type="Texture" id=1]
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Sprite
 
 signal pressed
@@ -14,7 +14,6 @@ export(String) var text = \"Sample Text\"
 export(Vector2) var hover_scale = Vector2(1.1, 1.1)
 
 var _scale = Vector2(1,1)
-export(bool) var disabled = false
 
 func _ready():
 	$MarginContainer/Label.text = text
@@ -33,16 +32,15 @@ func _on_MarginContainer_mouse_exited():
 
 
 func _on_MarginContainer_gui_input(event):
-	if not disabled:
-		if event is InputEventMouseButton and event.button_index == 1 and event.pressed and not event.is_echo():
-			scale = _scale
-			print(\"pressed\")
-			emit_signal(\"pressed\")
-			
-		elif event is InputEventMouseButton and event.button_index == 1 and not event.pressed and not event.is_echo():
-			scale = hover_scale
-			emit_signal(\"released\")
-			print(\"released\")
+	if event is InputEventMouseButton and event.button_index == 1 and event.pressed and not event.is_echo():
+		scale = _scale
+		print(\"pressed\")
+		emit_signal(\"pressed\")
+		
+	elif event is InputEventMouseButton and event.button_index == 1 and not event.pressed and not event.is_echo():
+		scale = hover_scale
+		emit_signal(\"released\")
+		print(\"released\")
 "
 
 [sub_resource type="DynamicFontData" id=2]
@@ -57,7 +55,8 @@ font_data = SubResource( 2 )
 [node name="Sprite" type="Sprite"]
 show_behind_parent = true
 texture = ExtResource( 1 )
-script = SubResource( 4 )
+script = SubResource( 1 )
+text = "Exit"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = -250.0
@@ -76,7 +75,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Play"
+text = "Exit"
 align = 1
 valign = 1
 __meta__ = {
