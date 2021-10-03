@@ -16,6 +16,6 @@ orbit_velocity_random = 0.0
 tangential_accel = 70.0
 damping = 50.0
 angle_random = 0.11
-scale = 0.05
+scale = 0.5
 scale_random = 0.1
 color_ramp = SubResource( 2 )

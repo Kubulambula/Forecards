@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/ui/timer.gd" type="Script" id=1]
+
+[node name="timer" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_right = 207.0
+margin_bottom = 59.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
