@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/cards/ROCK.gd" type="Script" id=1]
-[ext_resource path="res://assets/map/weather_rain.png" type="Texture" id=2]
 [ext_resource path="res://assets/map/grids/card_rocks_gridded.png" type="Texture" id=3]
 [ext_resource path="res://assets/particle/ROCK.tres" type="Material" id=4]
+[ext_resource path="res://assets/map/cloud.png" type="Texture" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -42,6 +42,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 4 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [node name="Particles" type="Node2D" parent="."]
 
 [node name="Particles2D" type="Particles2D" parent="Particles"]
@@ -54,7 +61,7 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 process_material = ExtResource( 4 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 
 [node name="Particles2D2" type="Particles2D" parent="Particles"]
 modulate = Color( 1, 1, 1, 0.52549 )
@@ -66,7 +73,7 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 process_material = ExtResource( 4 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 
 [node name="Particles2D3" type="Particles2D" parent="Particles"]
 modulate = Color( 1, 1, 1, 0.52549 )
@@ -78,7 +85,7 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 process_material = ExtResource( 4 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 
 [node name="Particles2D4" type="Particles2D" parent="Particles"]
 modulate = Color( 1, 1, 1, 0.52549 )
@@ -90,14 +97,7 @@ lifetime = 1.5
 one_shot = true
 explosiveness = 1.0
 process_material = ExtResource( 4 )
-texture = ExtResource( 2 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.35, 0.35 )
-frames = SubResource( 4 )
-centered = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+texture = ExtResource( 5 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 52.5, 78.75 )
