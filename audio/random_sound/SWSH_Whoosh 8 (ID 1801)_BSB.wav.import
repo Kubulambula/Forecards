@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SWSH_Whoosh 8 (ID 1801)_BSB.wav-22ac8feb7a420501337d1e81bac60f17.sample"
+
+[deps]
+
+source_file="res://audio/random_sound/SWSH_Whoosh 8 (ID 1801)_BSB.wav"
+dest_files=[ "res://.import/SWSH_Whoosh 8 (ID 1801)_BSB.wav-22ac8feb7a420501337d1e81bac60f17.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

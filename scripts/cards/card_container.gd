@@ -13,15 +13,8 @@ func setup(cards):
 		if i < card_points.size():
 			var card = load(cards[i]).instance()
 			card.origin_card_point = card_points[i]
-			card.connect("selected", self, "selected")
+			card.zero_rotation = -card_points[i].rect_rotation
 			
 			card_points[i].add_child(card)
 		else:
 			push_error("not enough points to put cards in :(")
-
-
-func selected(what):
-	pass
-	
-func deselected(what):
-	pass

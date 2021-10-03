@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/VOXScrm_Wilhelm scream (ID 0477)_BSB.wav-dae7ef1fc962423016bd5dc726204630.sample"
+
+[deps]
+
+source_file="res://audio/random_sound/VOXScrm_Wilhelm scream (ID 0477)_BSB.wav"
+dest_files=[ "res://.import/VOXScrm_Wilhelm scream (ID 0477)_BSB.wav-dae7ef1fc962423016bd5dc726204630.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
