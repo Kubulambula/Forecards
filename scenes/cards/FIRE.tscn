@@ -1,87 +1,172 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scripts/cards/FIRE.gd" type="Script" id=1]
 [ext_resource path="res://assets/map/grids/card_fire_gridded.png" type="Texture" id=2]
+[ext_resource path="res://scenes/weather/effects/FIRE_2.tres" type="Material" id=3]
 
-[sub_resource type="AtlasTexture" id=1]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 300, 450 )
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.343434, 0.626263, 1 )
+colors = PoolColorArray( 1, 0.993896, 0.375, 1, 0.941406, 0.568125, 0.268448, 1, 1, 0.0761719, 0, 1, 0.431373, 0.196078, 0.196078, 0.705882 )
 
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 600, 0, 300, 450 )
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 900, 0, 300, 450 )
+[sub_resource type="Curve" id=3]
+min_value = -200.0
+max_value = 400.0
+_data = [ Vector2( 0.00819671, 37.9546 ), 0.0, -924.242, 0, 0, Vector2( 1, 48.8636 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 300, 450 )
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
 
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 600, 0, 300, 450 )
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 70, 90, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.2
+linear_accel_curve = SubResource( 4 )
+scale = 1.5
+scale_random = 1.0
+color_ramp = SubResource( 2 )
 
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 300, 450 )
+[sub_resource type="Gradient" id=6]
+colors = PoolColorArray( 0.499512, 0.499512, 0.499512, 1, 0.491699, 0.491699, 0.491699, 0 )
 
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 600, 0, 300, 450 )
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
 
-[sub_resource type="AtlasTexture" id=10]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 900, 0, 300, 450 )
+[sub_resource type="Curve" id=8]
+_data = [ Vector2( 0, 0.553409 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 300, 450 )
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
 
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 600, 0, 300, 450 )
+[sub_resource type="ParticlesMaterial" id=10]
+emission_shape = 2
+emission_box_extents = Vector3( 70, 90, 1 )
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 105.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 3.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 7 )
 
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 900, 0, 300, 450 )
+[sub_resource type="CanvasItemMaterial" id=11]
+blend_mode = 1
 
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 300, 450 )
+[sub_resource type="Curve" id=12]
+max_value = 300.0
+_data = [ Vector2( 0.0327869, 135.682 ), 0.0, 0.0, 0, 0, Vector2( 0.95082, 140.455 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=13]
+curve = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=14]
+emission_shape = 2
+emission_box_extents = Vector3( 70, 90, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 0, 0 )
+spread = 180.0
+flatness = 0.3
+gravity = Vector3( 0, 140, 0 )
+initial_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 100.0
+radial_accel_random = 0.4
+radial_accel_curve = SubResource( 13 )
+scale = 2.0
+color_ramp = SubResource( 2 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 300, 0, 300, 450 )
+region = Rect2( 0, 0, 300, 450 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 2 )
+region = Rect2( 600, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 2 )
 region = Rect2( 900, 0, 300, 450 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 600, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 600, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 900, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 600, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 900, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 300, 0, 300, 450 )
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 900, 0, 300, 450 )
+
+[sub_resource type="SpriteFrames" id=29]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
 "loop": true,
 "name": "default",
 "speed": 8.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=30]
 extents = Vector2( 33, 55 )
 
 [node name="Card" type="Control"]
@@ -95,18 +180,45 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Particles2D3" type="Particles2D" parent="."]
+position = Vector2( 52.0588, 78.4584 )
+amount = 500
+lifetime = 0.5
+explosiveness = 0.5
+process_material = SubResource( 5 )
+
+[node name="Particles2D2" type="Particles2D" parent="Particles2D3"]
+position = Vector2( 3.91716, -4.54638 )
+amount = 500
+lifetime = 0.8
+explosiveness = 0.8
+process_material = SubResource( 10 )
+
+[node name="Particles2D" type="Particles2D" parent="Particles2D3"]
+material = SubResource( 11 )
+amount = 10
+lifetime = 0.5
+explosiveness = 0.8
+process_material = SubResource( 14 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+position = Vector2( 52.3687, 81.3906 )
+amount = 200
+lifetime = 0.4
+process_material = ExtResource( 3 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.35, 0.35 )
-frames = SubResource( 4 )
+frames = SubResource( 29 )
 centered = false
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 52.5, 78.75 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 30 )
 __meta__ = {
 "_editor_description_": ""
 }
