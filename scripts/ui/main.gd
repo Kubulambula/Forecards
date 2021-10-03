@@ -2,7 +2,6 @@ extends Node2D
 
 var playing = false
 
-
 func _ready():
 	WeatherData.camera = $Camera2D
 	$Menu/Clouds/Clouds.play()
@@ -45,3 +44,4 @@ func _on_Sprite_pressed():
 
 func _on_Sprite2_pressed():
 	get_tree().quit()
+
