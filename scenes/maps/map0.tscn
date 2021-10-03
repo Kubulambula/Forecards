@@ -18,20 +18,24 @@ offset = Vector2( -844.8, -475.2 )
 [node name="Cities" type="Node2D" parent="."]
 
 [node name="City" parent="Cities" instance=ExtResource( 3 )]
-position = Vector2( 277.336, 273.289 )
+position = Vector2( 241.336, 227.289 )
 population = 1
 
 [node name="City2" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 1009.75, 511.945 )
+city = 5
 
 [node name="City3" parent="Cities" instance=ExtResource( 3 )]
-position = Vector2( 313.661, 533.715 )
+position = Vector2( 314.85, 534.904 )
+city = 2
 
 [node name="City4" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 620.84, 360.624 )
+city = 4
 
 [node name="City5" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 993.623, 218.32 )
+city = 3
 
 [node name="CardContainer" parent="." instance=ExtResource( 2 )]
 
