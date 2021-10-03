@@ -42,11 +42,14 @@ func _on_Card_gui_input(event):
 							cities[0].forecast_card.go_to_origin = true
 							cities[0].forecast_card.go_to_city = false
 						
-						city = cities[0]
-						cities[0].forecast_card = self
-						go_to_city = true
-						go_to_origin = false
-						particles()
+						if cities[0].population:
+							city = cities[0]
+							cities[0].forecast_card = self
+							go_to_city = true
+							go_to_origin = false
+							particles()
+						else:
+							go_to_origin = true
 						
 					_:
 						for c in cities:
@@ -96,4 +99,6 @@ func get_cities_beneath():
 
 func particles():
 	for c in $Particles.get_children():
+		c.restart()
 		c.emitting = true
+		

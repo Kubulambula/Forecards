@@ -8,6 +8,7 @@
 [ext_resource path="res://assets/map/map_big.png" type="Texture" id=6]
 
 [node name="Map" type="Node2D"]
+pause_mode = 1
 
 [node name="map_big" type="Sprite" parent="."]
 scale = Vector2( 0.66, 0.66 )
@@ -19,7 +20,6 @@ offset = Vector2( -844.8, -475.2 )
 
 [node name="City" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 241.336, 227.289 )
-population = 1
 
 [node name="City2" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 1009.75, 511.945 )
@@ -32,6 +32,7 @@ city = 2
 [node name="City4" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 620.84, 360.624 )
 city = 4
+population = 1
 
 [node name="City5" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 993.623, 218.32 )

@@ -39,8 +39,6 @@ func _ready():
 	lazy_update_timer.start()
 
 
-
-
 func set_can_spawn(value):
 	if value:
 		time_started = OS.get_unix_time()
