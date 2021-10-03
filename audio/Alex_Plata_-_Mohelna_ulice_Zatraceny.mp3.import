@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Alex_Plata_-_Mohelna_ulice_Zatraceny.mp3-f74b105b4890538a0bb55e7c91f258f3.mp3str"
+
+[deps]
+
+source_file="res://audio/Alex_Plata_-_Mohelna_ulice_Zatraceny.mp3"
+dest_files=[ "res://.import/Alex_Plata_-_Mohelna_ulice_Zatraceny.mp3-f74b105b4890538a0bb55e7c91f258f3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
