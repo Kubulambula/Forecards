@@ -7,8 +7,9 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "blesk"
-length = 6.0
+length = 8.0
 loop = true
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("lightning:modulate")
 tracks/0/interp = 1
@@ -16,7 +17,31 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4.3, 4.4, 4.5, 6 ),
+"times": PoolRealArray( 0, 4.35, 4.4, 4.45, 8.05 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("lightning2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4.5, 4.55, 4.6, 8.05 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("lightning3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6, 6.05, 6.1, 8.05 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
@@ -46,7 +71,21 @@ script = ExtResource( 2 )
 [node name="lightning" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -18.2123, 123.514 )
-scale = Vector2( 0.246565, 0.252719 )
+scale = Vector2( 0.45, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="lightning2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -61.0237, 108.649 )
+rotation = -0.556678
+scale = Vector2( 0.45, 0.3 )
+texture = ExtResource( 4 )
+
+[node name="lightning3" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 72.1675, 157.406 )
+rotation = 0.611125
+scale = Vector2( 0.45, 0.3 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
