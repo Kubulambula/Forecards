@@ -3,6 +3,7 @@ extends Node
 enum TYPES {INVALID, RAIN, TORNADO, FIRE, ROCK, ACID, SNOW}
 var empty_card = preload("res://scenes/cards/card.tscn").instance()
 var map = null
+var gui
 
 var camera = null
 

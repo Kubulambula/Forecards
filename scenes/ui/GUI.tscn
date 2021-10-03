@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/map/boarder.png" type="Texture" id=1]
+[ext_resource path="res://assets/map/clock.png" type="Texture" id=2]
+[ext_resource path="res://assets/map/clock_hand.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasLayer
+
+var happy_range = Vector2(85, 7)
+var max_happy = 0
+var desired_rot = 7
+
+
+func _ready():
+	WeatherData.gui = self
+	for city in get_tree().get_nodes_in_group(\"cities\"):
+		max_happy += city.population
+
+func happy():
+	var happy = 0
+	for city in get_tree().get_nodes_in_group(\"cities\"):
+		happy += city.population
+	desired_rot = remap_value_between_ranges(happy, Vector2(0, max_happy), happy_range)
+
+
+func remap_value_between_ranges(value: float, old_range: Vector2, new_range: Vector2) -> float:
+	return ((value - old_range.x) / (old_range.y - old_range.x)) * (new_range.y - new_range.x) + new_range.x
+
+
+func _process(delta):
+	$Sprite2/Sprite.rotation_degrees = lerp($Sprite2/Sprite.rotation_degrees, desired_rot, 0.35)
+"
+
+[sub_resource type="Animation" id=2]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="GUI" type="CanvasLayer"]
+script = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.67, 0.67 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 3.46483, 470.303 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite" type="Sprite" parent="Sprite2"]
+position = Vector2( 11.4324, 484.191 )
+rotation = 0.122173
+scale = Vector2( 0.5, 0.6 )
+texture = ExtResource( 3 )
+offset = Vector2( 7, -170 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/hide = SubResource( 2 )

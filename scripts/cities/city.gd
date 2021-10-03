@@ -47,6 +47,8 @@ func add_to_population(count=1, deadly=false):
 		$Sprite.texture = load("res://assets/map/city_" + str(city) + "_destroyed.png")
 		$AudioStreamPlayer.play()
 	$Reputation.emitting = true
+	
+	WeatherData.gui.happy()
 
 func weather_effect(type, deadly):
 	$Timer.start()
