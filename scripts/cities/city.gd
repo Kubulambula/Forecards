@@ -44,6 +44,7 @@ func add_to_population(count=1, deadly=false):
 	$Face.texture = faces[population]
 	if population == 0:
 		$Sprite.texture = load("res://assets/map/city_" + str(city) + "_destroyed.png")
+		$AudioStreamPlayer.play()
 #	population = clamp(population+count, 0, 2)
 #	if population == 0 and not deadly:
 #		population = 1

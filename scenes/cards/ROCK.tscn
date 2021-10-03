@@ -42,22 +42,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.35, 0.35 )
-frames = SubResource( 4 )
-centered = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 52.5, 78.75 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 5 )
-__meta__ = {
-"_editor_description_": ""
-}
-
 [node name="Particles" type="Node2D" parent="."]
 
 [node name="Particles2D" type="Particles2D" parent="Particles"]
@@ -107,5 +91,21 @@ one_shot = true
 explosiveness = 1.0
 process_material = ExtResource( 4 )
 texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 4 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 52.5, 78.75 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 5 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [connection signal="gui_input" from="." to="." method="_on_Card_gui_input"]
