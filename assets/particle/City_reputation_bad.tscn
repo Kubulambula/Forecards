@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/map/people_sad.png" type="Texture" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.573643, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 1
+emission_sphere_radius = 25.0
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 20.0
+gravity = Vector3( 0, 50, 0 )
+initial_velocity = 75.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.2
+color_ramp = SubResource( 2 )
+
+[node name="City_reputation_bad" type="Node2D"]
+
+[node name="Particles2D" type="Particles2D" parent="."]
+amount = 10
+lifetime = 2.0
+process_material = SubResource( 3 )
+texture = ExtResource( 1 )
