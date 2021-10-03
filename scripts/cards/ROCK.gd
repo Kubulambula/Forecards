@@ -1,5 +1,4 @@
-extends Weather
+extends Card
 
 func _init():
 	type = WeatherData.TYPES.ROCK
-	deadly = true

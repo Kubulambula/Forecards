@@ -2,8 +2,13 @@
 
 [ext_resource path="res://scripts/cards/card_container.gd" type="Script" id=2]
 
-[node name="CardContainer" type="CanvasLayer"]
+[node name="CardContainer" type="Control"]
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CardPoints" type="Control" parent="."]
 margin_right = 40.0

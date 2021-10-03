@@ -11,3 +11,10 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -59.3055, -111.366, -99.3507, -66.6494, -118.706, -14.5906, -110.029, 53.4862, -59.3055, 104.878, 10.1062, 122.898, 74.1785, 100.873, 112.889, 58.8256, 126.237, -11.9209, 106.882, -63.3123, 70.174, -98.0181, -0.57251, -124.715 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
