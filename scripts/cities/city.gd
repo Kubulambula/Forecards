@@ -42,16 +42,10 @@ func add_to_population(count=1, deadly=false):
 			population = 1
 		
 	$Face.texture = faces[population]
+	$Reputation.texture = faces[population]
 	if population == 0:
 		$Sprite.texture = load("res://assets/map/city_" + str(city) + "_destroyed.png")
-		$AudioStreamPlayer.play()
-#	population = clamp(population+count, 0, 2)
-#	if population == 0 and not deadly:
-#		population = 1
-#	$Face.texture = faces[population]
-#	if population == 0:
-#		$Sprite.texture = load("res://assets/map/city_" + str(city) + "_destroyed.png")
-
+	$Reputation.emitting = true
 
 func weather_effect(type, deadly):
 	$Timer.start()
@@ -87,3 +81,4 @@ func do_weather():
 			forecast_card.city = null
 			forecast_card.go_to_city = false
 			forecast_card.go_to_origin = true
+	
