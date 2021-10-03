@@ -9,11 +9,12 @@ func _ready():
 	$Menu/Clouds/Clouds2.playb()
 	for city in get_tree().get_nodes_in_group("cities"):
 		city.get_node("Face").modulate = Color("#00ffffff")
-#	$Map/WeatherDirector.can_spawn = true
 
 
 func to_play():
 	playing = true
+	get_tree().paused = false
+	$Map/WeatherDirector.can_spawn = true
 	$AnimationPlayer.play("start")
 	$Menu/Clouds/Clouds/FadePlayer.play("fade")
 	$Menu/Clouds/Clouds2/FadePlayer.play("fade")
@@ -23,6 +24,7 @@ func to_play():
 
 func to_menu():
 	playing = false
+	get_tree().paused = true
 	$AnimationPlayer.play_backwards("start")
 	$Menu/Clouds/Clouds/FadePlayer.play_backwards("fade")
 	$Menu/Clouds/Clouds2/FadePlayer.play_backwards("fade")

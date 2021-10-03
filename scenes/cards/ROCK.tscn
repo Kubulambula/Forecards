@@ -42,13 +42,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.35, 0.35 )
-frames = SubResource( 4 )
-centered = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
 [node name="Particles" type="Node2D" parent="."]
 
 [node name="Particles2D" type="Particles2D" parent="Particles"]
@@ -98,6 +91,13 @@ one_shot = true
 explosiveness = 1.0
 process_material = ExtResource( 4 )
 texture = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.35, 0.35 )
+frames = SubResource( 4 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 52.5, 78.75 )
