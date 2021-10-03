@@ -57,24 +57,32 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Particles2D" type="Particles2D" parent="."]
+[node name="Particles" type="Node2D" parent="."]
+
+[node name="Particles2D" type="Particles2D" parent="Particles"]
 position = Vector2( 53.2979, 76.1794 )
+emitting = false
 amount = 200
 lifetime = 2.0
+one_shot = true
 explosiveness = 1.0
 process_material = ExtResource( 3 )
 
-[node name="Particles2D2" type="Particles2D" parent="."]
+[node name="Particles2D2" type="Particles2D" parent="Particles"]
 position = Vector2( 53.2979, 76.1794 )
+emitting = false
 amount = 200
 lifetime = 2.0
+one_shot = true
 explosiveness = 1.0
 process_material = ExtResource( 3 )
 
-[node name="Particles2D3" type="Particles2D" parent="."]
+[node name="Particles2D3" type="Particles2D" parent="Particles"]
 position = Vector2( 53.2979, 76.1794 )
+emitting = false
 amount = 200
 lifetime = 2.0
+one_shot = true
 explosiveness = 1.0
 process_material = ExtResource( 3 )
 

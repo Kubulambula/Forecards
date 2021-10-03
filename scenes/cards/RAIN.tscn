@@ -42,20 +42,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Particles2D" type="Particles2D" parent="."]
-position = Vector2( 51.7896, 79.4217 )
-amount = 1000
-lifetime = 0.5
-explosiveness = 1.0
-process_material = ExtResource( 4 )
-
-[node name="Particles2D2" type="Particles2D" parent="."]
-position = Vector2( 51.7896, 79.4217 )
-amount = 1000
-lifetime = 0.5
-explosiveness = 1.0
-process_material = ExtResource( 3 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -68,5 +54,25 @@ position = Vector2( 52.5, 78.75 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 5 )
+
+[node name="Particles" type="Node2D" parent="."]
+
+[node name="Particles2D" type="Particles2D" parent="Particles"]
+position = Vector2( 51.7896, 79.4217 )
+emitting = false
+amount = 1000
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource( 4 )
+
+[node name="Particles2D2" type="Particles2D" parent="Particles"]
+position = Vector2( 51.7896, 79.4217 )
+emitting = false
+amount = 1000
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource( 3 )
 
 [connection signal="gui_input" from="." to="." method="_on_Card_gui_input"]
