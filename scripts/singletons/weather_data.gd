@@ -1,13 +1,13 @@
 extends Node
 
-enum TYPES {INVALID, RAIN, TORNADO, FIRE, ROCK}
+enum TYPES {INVALID, RAIN, TORNADO, FIRE, ROCK, ACID, SNOW}
 var empty_card = preload("res://scenes/cards/card.tscn").instance()
 var map = null
 
 var camera = null
 
 var card_container = null setget set_card_container
-var cards = ["res://scenes/cards/RAIN.tscn", "res://scenes/cards/FIRE.tscn", "res://scenes/cards/TORNADO.tscn", "res://scenes/cards/ROCK.tscn", "res://scenes/cards/card.tscn", "res://scenes/cards/card.tscn",]
+var cards = ["res://scenes/cards/RAIN.tscn", "res://scenes/cards/FIRE.tscn", "res://scenes/cards/TORNADO.tscn", "res://scenes/cards/ROCK.tscn", "res://scenes/cards/ACID.tscn", "res://scenes/cards/SNOW.tscn",]
 
 var weather_move_speed_multiplier = 1
 
