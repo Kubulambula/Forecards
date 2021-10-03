@@ -18,7 +18,9 @@ var effects = [
 	preload("res://scenes/weather/effects/rain.tscn"),
 	preload("res://scenes/weather/effects/tornado.tscn"),
 	preload("res://scenes/weather/effects/fire.tscn"),
-	preload("res://scenes/weather/effects/rock.tscn")
+	preload("res://scenes/weather/effects/rock.tscn"),
+	preload("res://scenes/weather/effects/snow.tscn"),
+	preload("res://scenes/weather/effects/acid.tscn")
 ]
 
 func _ready():
