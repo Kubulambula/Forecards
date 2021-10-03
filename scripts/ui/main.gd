@@ -9,7 +9,7 @@ func _ready():
 #	$AnimationPlayer.play("start")
 
 func _input(event):
-	$MenuClouds/Clouds.play()
+#	$MenuClouds/Clouds.play()
 #	$MenuClouds/Clouds2.play()
 	if event is InputEventKey:
 		$AnimationPlayer.play_backwards("start")
