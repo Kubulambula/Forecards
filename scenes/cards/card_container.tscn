@@ -1,9 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/cards/card_container.gd" type="Script" id=2]
 
+[sub_resource type="Animation" id=1]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/CardPoints:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="CardContainer" type="Control"]
 pause_mode = 2
+modulate = Color( 1, 1, 1, 0 )
 mouse_filter = 1
 script = ExtResource( 2 )
 __meta__ = {
@@ -13,17 +29,20 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CardPoints" type="Control" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 42.0
+margin_bottom = 42.0
 mouse_filter = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CardPoint4" type="Control" parent="CanvasLayer/CardPoints"]
-margin_left = 426.768
-margin_top = 533.301
-margin_right = 426.768
-margin_bottom = 533.301
-rect_rotation = -16.0
+margin_left = 420.0
+margin_top = 540.0
+margin_right = 420.0
+margin_bottom = 540.0
+rect_rotation = -20.0
 mouse_filter = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -83,3 +102,6 @@ mouse_filter = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fade = SubResource( 1 )

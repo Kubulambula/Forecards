@@ -71,8 +71,12 @@ process_material = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 52.5, 78.75 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 5 )
 
 [connection signal="gui_input" from="." to="." method="_on_Card_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_Card_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_Card_mouse_exited"]

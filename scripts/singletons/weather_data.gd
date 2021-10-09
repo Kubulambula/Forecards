@@ -8,7 +8,7 @@ var gui
 var camera = null
 
 var card_container = null setget set_card_container
-var cards = ["res://scenes/cards/RAIN.tscn", "res://scenes/cards/FIRE.tscn", "res://scenes/cards/TORNADO.tscn", "res://scenes/cards/ROCK.tscn", "res://scenes/cards/ACID.tscn", "res://scenes/cards/SNOW.tscn",]
+var cards = ["res://scenes/cards/RAIN.tscn", "res://scenes/cards/SNOW.tscn", "res://scenes/cards/TORNADO.tscn", "res://scenes/cards/ROCK.tscn", "res://scenes/cards/ACID.tscn", "res://scenes/cards/FIRE.tscn"]
 
 var weather_move_speed_multiplier = 1
 

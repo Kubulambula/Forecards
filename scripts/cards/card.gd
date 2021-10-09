@@ -7,17 +7,26 @@ var offset = Vector2(0,0)
 var zero_rotation = 0
 var origin_card_point = self
 var selected = false
-var go_to_origin = false
+var go_to_origin = true
 var go_to_city = false
 var city = null
 export(float) var test_zoom
+
+var big = false
+onready var o_scale = rect_scale
+var scale_plus = Vector2(0.5,0.5)
+
+var scale_multiplier = Vector2(1.3, 1.3)
+
+#func _ready():
+#	$AnimatedSprite.playing = true
 
 
 func _on_Card_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == 1:
 			if event.is_pressed():
-				$AnimatedSprite.playing = true
+				big = false
 				offset = get_local_mouse_position()
 				selected = true
 				go_to_origin = false
@@ -26,7 +35,7 @@ func _on_Card_gui_input(event):
 					city.forecast_card = null
 					city = null
 			else:
-				$AnimatedSprite.playing = false
+#				$AnimatedSprite.playing = false
 				selected = false
 				var cities = get_cities_beneath()
 				
@@ -70,6 +79,10 @@ func _on_Card_gui_input(event):
 						go_to_city = true
 						go_to_origin = false
 						particles()
+						
+	elif event is InputEventMouseMotion:
+		pass
+	
 
 
 func _process(_delta):
@@ -81,17 +94,44 @@ func _process(_delta):
 		rect_rotation = lerp(rect_rotation, zero_rotation, 0.2)
 		var cityPosWS = city.get_node("CardHolder").rect_global_position
 		var cityPosSS = ((cityPosWS - Vector2(640, 360)) / WeatherData.camera.zoom.x) + Vector2(640, 360)  
-		print(test_zoom)
 		var cardPosSS = rect_global_position
-		rect_global_position = lerp(cardPosSS, cityPosSS, 0.2)		
+		rect_global_position = lerp(cardPosSS, cityPosSS, 0.2)
 		rect_scale = lerp(rect_scale, city.get_node("CardHolder").rect_scale, 0.4)
+#		rect_rotation = lerp(rect_rotation, zero_rotation, 0.2)
+#		rect_global_position = lerp(rect_global_position, city.get_node("CardHolder").rect_global_position, 0.2)
+#		rect_scale = lerp(rect_scale, city.get_node("CardHolder").rect_scale, 0.4)
 	elif go_to_origin:
 		rect_global_position = lerp(rect_global_position, origin_card_point.rect_global_position, 0.2)
 		rect_rotation = lerp(rect_rotation, 0, 0.2)
 		rect_scale = lerp(rect_scale, Vector2(1,1), 0.3)
-#	else:
-#		# do nothing
-#		pass
+#		if rect_global_position.is_equal_approx(origin_card_point.rect_global_position):
+#			go_to_origin = false
+#			rect_pivot_offset = Vector2(52.5,157)
+	
+	if rect_global_position.is_equal_approx(origin_card_point.rect_global_position):
+		go_to_origin = false
+	
+	if selected or go_to_origin or go_to_city:
+		rect_pivot_offset = Vector2(0, 0)
+	else:
+		rect_pivot_offset = Vector2(52.5, 157)
+	
+	if big:
+		rect_scale = lerp(rect_scale, o_scale + scale_plus, 0.3)
+	else:
+		rect_scale = lerp(rect_scale, o_scale, 0.3)
+	
+#	if selected or city:
+#		rect_pivot_offset = Vector2(0,0)
+#	elif rect_global_position.is_equal_approx(origin_card_point.rect_global_position):
+#		go_to_origin = false
+#		rect_pivot_offset = Vector2(52.5,157)
+#	elif go_to_origin:
+#		if rect_global_position.is_equal_approx(origin_card_point.rect_global_position):
+#			go_to_origin = false
+#			rect_pivot_offset = Vector2(52.5,157)
+#		else:
+#			rect_pivot_offset = Vector2(0,0)
 
 
 func get_cities_beneath():
@@ -107,3 +147,14 @@ func particles():
 		c.restart()
 		c.emitting = true
 		
+
+
+func _on_Card_mouse_entered():
+	if not city:
+		$AnimatedSprite.playing = true
+		big = true
+
+
+func _on_Card_mouse_exited():
+	$AnimatedSprite.playing = false
+	big = false

@@ -1,8 +1,5 @@
-score 
-smrt 
-karty zvuk efek 
-credits
-tutorial
+
+itch
 
 zvuk: 
 karta vzít položit 

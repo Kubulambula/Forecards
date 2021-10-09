@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/weather/technical/deleter.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/cards/card_container.tscn" type="PackedScene" id=2]
@@ -7,8 +7,18 @@
 [ext_resource path="res://scenes/weather/technical/directional_spawn_point.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/map/map_big.png" type="Texture" id=6]
 
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+
+#func _input(event):
+#	if event is InputEventKey:
+#		get_tree().get_root().get_node(\"Main\").lol = true
+"
+
 [node name="Map" type="Node2D"]
 pause_mode = 1
+script = SubResource( 1 )
 
 [node name="map_big" type="Sprite" parent="."]
 scale = Vector2( 0.66, 0.66 )
@@ -36,6 +46,7 @@ city = 3
 [node name="City4" parent="Cities" instance=ExtResource( 3 )]
 position = Vector2( 637.969, 379.623 )
 city = 4
+population = 1
 
 [node name="CardContainer" parent="." instance=ExtResource( 2 )]
 
@@ -47,23 +58,39 @@ script = ExtResource( 4 )
 [node name="Spawners" type="Node2D" parent="WeatherDirector"]
 
 [node name="DirectionalSpawnPoint3" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
-position = Vector2( -294.238, -133.18 )
+position = Vector2( -359.321, -220.089 )
+
+[node name="DirectionalSpawnPoint10" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
+position = Vector2( 62.2956, -347.458 )
+cast_to = Vector2( 10, 50 )
 
 [node name="DirectionalSpawnPoint4" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
-position = Vector2( 1563.76, 583.855 )
+position = Vector2( 1616.08, 885.913 )
 cast_to = Vector2( -50, -50 )
 
 [node name="DirectionalSpawnPoint7" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
-position = Vector2( 1021.82, 895.452 )
+position = Vector2( 1024.2, 1016.75 )
 cast_to = Vector2( 0, -50 )
 
+[node name="DirectionalSpawnPoint11" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
+position = Vector2( 510.731, 1073.38 )
+cast_to = Vector2( 10, -50 )
+
 [node name="DirectionalSpawnPoint5" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
-position = Vector2( -276.396, 370.697 )
+position = Vector2( -376.289, 287.453 )
 cast_to = Vector2( 50, 25 )
 
 [node name="DirectionalSpawnPoint6" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
-position = Vector2( 738.399, -273.468 )
+position = Vector2( 755.048, -318.658 )
 cast_to = Vector2( -10, 50 )
+
+[node name="DirectionalSpawnPoint8" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
+position = Vector2( 1528.03, -38.005 )
+cast_to = Vector2( -30, 50 )
+
+[node name="DirectionalSpawnPoint9" parent="WeatherDirector/Spawners" instance=ExtResource( 5 )]
+position = Vector2( 1418.63, -271.09 )
+cast_to = Vector2( -30, 50 )
 
 [node name="Deleters" type="Node2D" parent="."]
 

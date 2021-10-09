@@ -51,6 +51,7 @@ func add_to_population(count=1, deadly=false):
 		else:
 			$AudioStreamPlayer.play()
 		$Reputation.emitting = true
+	WeatherData.gui.happy()
 
 func weather_effect(type, deadly):
 	$Timer.start()

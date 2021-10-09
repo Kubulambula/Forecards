@@ -1,15 +1,157 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/ui/GUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/maps/map0.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/ui/main.gd" type="Script" id=3]
 [ext_resource path="res://scenes/ui/Clouds.tscn" type="PackedScene" id=4]
-[ext_resource path="res://audio/04 A Storm on the Horizon Pieces of the Soul.mp3" type="AudioStream" id=5]
-[ext_resource path="res://audio/background_sound/AMBBird_Countryside (ID 0097)_BSB.wav" type="AudioStream" id=6]
 [ext_resource path="res://scripts/ui/custom_button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/map/death_screen.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=4]
+resource_name = "black_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.184314, 0.184314, 0.184314, 0 ), Color( 0.12549, 0.145098, 0.192157, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "black_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.12549, 0.145098, 0.192157, 1 ), Color( 0.184314, 0.184314, 0.184314, 0 ) ]
+}
 
 [sub_resource type="Animation" id=1]
-resource_name = "start"
+resource_name = "game_over"
+length = 3.0
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.8, 1.8 ), Vector2( 1.3, 1.3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Menu/buttons/Sprite2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu/buttons/Sprite2:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ false, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Menu/buttons/Sprite:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ false, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Menu/buttons/Sprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Menu/buttons:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/keys = {
+"times": PoolRealArray( 0.83, 0.98 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -720 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Menu/GameOver:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Menu/GameOver/Sprite2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.98, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 640, 400 ), Vector2( 2000, 400 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Menu/GameOver/Sprite2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.96 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
 length = 1.3
 step = 0.01
 tracks/0/type = "value"
@@ -25,28 +167,28 @@ tracks/0/keys = {
 "values": [ Vector2( 1.8, 1.8 ), Vector2( 1.3, 1.3 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Menu/buttons/Sprite:modulate")
+tracks/1/path = NodePath("Menu/buttons/Sprite2:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.02, 0.62 ),
+"times": PoolRealArray( 0, 0.66 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Menu/buttons/Sprite2:modulate")
+tracks/2/path = NodePath("Menu/buttons/Sprite2:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.63 ),
+"times": PoolRealArray( 0, 0.66 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ false, true ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Menu/buttons/Sprite:disabled")
@@ -55,22 +197,22 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.62 ),
+"times": PoolRealArray( 0, 0.66 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ false, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Menu/buttons/Sprite2:disabled")
+tracks/4/path = NodePath("Menu/buttons/Sprite:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.63 ),
+"times": PoolRealArray( 0, 0.65 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Menu/buttons:position")
@@ -79,70 +221,30 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.68, 1.29 ),
+"times": PoolRealArray( 0.83, 0.98 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 10000 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, -720 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Menu/GameOver:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="GDScript" id=2]
-script/source = "extends Node2D
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://fonts/brokenscript-bold.ttf"
 
-
-func play():
-	for c in get_children():
-		c.play(\"cloud\")
-		c.advance(12)
-
-
-func playb():
-	for c in get_children():
-		c.play_backwards(\"cloud\")
-		c.advance(12)
-"
-
-[sub_resource type="GDScript" id=3]
-script/source = "extends Sprite
-
-signal pressed
-signal released
-signal hover(value)
-
-
-export(String) var text = \"Sample Text\"
-export(Vector2) var hover_scale = Vector2(1.1, 1.1)
-
-var _scale = Vector2(1,1)
-export(bool) var disabled = false
-
-func _ready():
-	$MarginContainer/Label.text = text
-	_scale = scale
-	hover_scale = scale * hover_scale
-
-
-func _on_MarginContainer_mouse_entered():
-	scale = hover_scale
-	emit_signal(\"hover\", true)
-
-
-func _on_MarginContainer_mouse_exited():
-	scale = _scale
-	emit_signal(\"hover\", false)
-
-
-func _on_MarginContainer_gui_input(event):
-	if not disabled:
-		if event is InputEventMouseButton and event.button_index == 1 and event.pressed and not event.is_echo():
-			scale = _scale
-			print(\"pressed\")
-			emit_signal(\"pressed\")
-			
-		elif event is InputEventMouseButton and event.button_index == 1 and not event.pressed and not event.is_echo():
-			scale = hover_scale
-			emit_signal(\"released\")
-			print(\"released\")
-"
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = SubResource( 5 )
 
 [node name="Main" type="Node2D"]
 pause_mode = 2
@@ -159,21 +261,10 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/start = SubResource( 1 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-volume_db = 5.0
-pitch_scale = 0.9
-autoplay = true
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-volume_db = -8.0
-pitch_scale = 0.7
-autoplay = true
-
-[node name="GUI" parent="." instance=ExtResource( 1 )]
+anims/black_in = SubResource( 4 )
+anims/black_out = SubResource( 3 )
+anims/game_over = SubResource( 1 )
+anims/start = SubResource( 2 )
 
 [node name="Menu" type="CanvasLayer" parent="."]
 follow_viewport_enable = true
@@ -181,41 +272,69 @@ follow_viewport_enable = true
 [node name="Clouds" type="Node2D" parent="Menu"]
 
 [node name="Clouds" parent="Menu/Clouds" instance=ExtResource( 4 )]
-script = SubResource( 2 )
 
 [node name="Clouds2" parent="Menu/Clouds" instance=ExtResource( 4 )]
-script = SubResource( 2 )
 
 [node name="buttons" type="Node2D" parent="Menu"]
+position = Vector2( 0, -40.5558 )
 z_index = 10
 
 [node name="Sprite" parent="Menu/buttons" instance=ExtResource( 7 )]
-position = Vector2( 640, 220 )
+position = Vector2( 640, 300 )
 scale = Vector2( 0.75, 0.75 )
-script = SubResource( 3 )
 text = "Play"
 
 [node name="Sprite2" parent="Menu/buttons" instance=ExtResource( 7 )]
-position = Vector2( 640, 400 )
+position = Vector2( 640, 475 )
 scale = Vector2( 0.75, 0.75 )
-script = SubResource( 3 )
 text = "Quit"
 
-<<<<<<< Updated upstream
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 6 )
-volume_db = 5.0
-pitch_scale = 0.9
+[node name="GameOver" type="Node2D" parent="Menu"]
+modulate = Color( 1, 1, 1, 0 )
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-volume_db = -8.0
-autoplay = true
+[node name="Sprite" type="Sprite" parent="Menu/GameOver"]
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 8 )
+offset = Vector2( 857.6, 100 )
+
+[node name="Label" type="Label" parent="Menu/GameOver/Sprite"]
+margin_left = -139.534
+margin_top = 155.14
+margin_right = 1860.47
+margin_bottom = 255.14
+rect_min_size = Vector2( 2000, 0 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Time survived: 42069"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" parent="Menu/GameOver" instance=ExtResource( 7 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 2000, 400 )
+scale = Vector2( 0.75, 0.75 )
+text = "Play Again"
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
-=======
-[node name="GameOver" type="Node2D" parent="Menu"]
->>>>>>> Stashed changes
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_left = -750.0
+margin_top = -500.0
+margin_right = 2250.0
+margin_bottom = 1300.0
+mouse_filter = 2
+color = Color( 0.12549, 0.145098, 0.192157, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="Menu/buttons/Sprite" to="." method="_on_Sprite_pressed"]
 [connection signal="pressed" from="Menu/buttons/Sprite2" to="." method="_on_Sprite2_pressed"]
+[connection signal="pressed" from="Menu/GameOver/Sprite2" to="." method="_on_replay_pressed"]

@@ -20,3 +20,23 @@ func setup(cards):
 			card_points[i].add_child(card)
 		else:
 			push_error("not enough points to put cards in :(")
+
+
+func remap_value_between_ranges(value: float, old_range: Vector2, new_range: Vector2) -> float:
+	return ((value - old_range.x) / (old_range.y - old_range.x)) * (new_range.y - new_range.x) + new_range.x
+
+func _process(delta):
+	pass
+#	$CanvasLayer/CardPoints.rect_position.y = remap_value_between_ranges(get_local_mouse_position().y, Vector2(0,0), Vector2(0,0))
+	# > 250 up
+	# < 250 down
+#	print(get_local_mouse_position().y)
+#	if get_local_mouse_position().y >= 250:
+#		$CanvasLayer/CardPoints.rect_position.y = lerp(rect_position.y, 0, 0.01)
+#	else:
+#		$CanvasLayer/CardPoints.rect_position.y = lerp(rect_position.y, 500, 0.01)
+#	rect_position.y = lerp(rect_position.y, clamp(get_local_mouse_position().y, 0, 500), 0.4)
+#	if get_local_mouse_position().y > 500:
+#		rect_position = lerp(rect.position.y, ,0.4)
+#	else:
+#		pass

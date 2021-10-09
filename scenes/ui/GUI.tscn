@@ -23,7 +23,8 @@ func happy():
 		happy += city.population
 	desired_rot = remap_value_between_ranges(happy, Vector2(0, max_happy), happy_range)
 	if happy == 0:
-		print(\"Game Over\")
+		get_tree().get_root().get_node(\"Main\").lol = true
+#		get_tree().get_root().get_node(\"Main/AnimationPlayer\").play_backwards(\"game_over\")
 
 
 func remap_value_between_ranges(value: float, old_range: Vector2, new_range: Vector2) -> float:
